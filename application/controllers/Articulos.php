@@ -10,7 +10,9 @@
 
         public function index()
         {
-            $this->load->view('articulos_view');
+            $datos = array('titulo_web'=>'Articulos',
+                'articulos' => $this->Articulos_model->get_articulos());
+            $this->load->view('articulos_view', $datos);
         }
     }
 ?>
