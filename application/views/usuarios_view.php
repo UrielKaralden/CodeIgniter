@@ -5,12 +5,14 @@
     </head>
     <body>
         <h1>Iniciar sesión</h1>
-        ​<?​php ​if​(​isset​(​$mensaje​)):?>
-        <h2>​<?=​ $mensaje​?>​</h2>
-        <?​php endif​;?>
+
+        <?php
+            if(isset($mensaje))
+                echo "<h2>​$mensaje</h2>";
+        ?>
         <form ​name="form_iniciar"
-            action="​<?=​base​.​url​().​'index.php/usuarios/verify_sesion'​
-            method​=​"POST"​?>​">
+            action="​<?= base_url().'index.php/usuarios/verify_session'?>"
+            method=​"POST"​>
 
             <label for="Usuario">Usuario</label>
             <input type = "text" name ="user"><br>
@@ -20,7 +22,7 @@
 
             <input type = "submit" name ="submit" value = "Entrar"><br>
 
-            <a href="<?=base_url().'usuarios.registro'?>"
+            <a href="<?=base_url().'usuarios/registro'?>"
                 title = 'Deseo registrarme'>Registrarme</a>
 
         </form>

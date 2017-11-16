@@ -1,36 +1,50 @@
 <?php
-
-    class​ ​Usuarios_model​ ​extends​ CI_Model​
+class Usuarios_model extends CI_Model
+{
+    public function _construct()
     {
-        ​public​ ​function​ _construct​()
-        {
-            parent​::​_construct​();
-        }
+        parent::_construct();
+    }
 
-        ​//Comprueba si el usuario existe o no ​
-        public​ ​function​ verify_user​(​$user​)
+    public function verify_user($user)
+    {
+        $ssql = "Select * from usuarios where usuario ='".$user."'";
+        
+        /*Cambio para el manual de CodeIgniter
+            - Sustituir mysql_query por $this->db->query()
+            - Sustituir mysql_num_rows por $consulta->num_rows()
+        */
+        $consulta = $this->db->query($ssql);
+        if(($consulta->num_rows())==0)
         {
-            $ssql ​=​ ​"select * from usuarios where usuario='"​.​$user​.​"'";
-            $consulta ​=​ mysql_query​(​$ssql​);
-            if ​(​mysql_numrows​(​$consulta​)​ ​==​ ​0​)
-            {​ ​//el usuario no existe
-                ​return​ ​false;
-            }​
-            ​else
-            ​{​ ​//el usuario existe
-                ​return​ ​true;
-            }
+            return false;
         }
-
-        public function add_usuario($user)
+        else
         {
-            $this​->​db​->​insert​(​'usuarios'​,​ array(
-                ​//el true es para que limpie este campo de inyecciones xss ​'nombre'​=>​$this​->​input​->​post​(​'nombre'​,​TRUE​),
-                ​'correo'​=>​$this​->​input​->​post​(​'correo'​,​TRUE​),
-                ​'usuario'​=>​$this​->​input​->​post​(​'usuario'​,​TRUE​),
-                ​'pass'​=>​$this​->​input​->​post​(​'pass'​,​TRUE​),
-                ​'codigo'​=>​'123456',
-                ​'estado'​=>​'0')); ​
+            return true;
         }
     }
+
+    public function add_usuario()
+    {
+        $new_user = array(
+            'nombre' => $this->input->post('nombre', TRUE),
+            'correo' => $this->input->post('correo', TRUE),
+            'usuario' => $this->input->post('usuario', TRUE),
+            'pass' => $this->input->post('pass', TRUE),
+            'codigo' => '123456',
+            'estado' => '0');
+        $this->db->insert('usuarios', $new_user);
+    }
+
+    public function verify_sesion()
+    {
+        $datos = array(
+            'usuario'=>$this->input->post('user',TRUE),
+            'pass'=>$this->input->post('pass',TRUE)
+        );
+        $consulta = $this->db->get_where('usuarios', $datos);
+    }
+}
+
 ?>
