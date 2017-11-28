@@ -5,15 +5,13 @@
     </head>
     <body>
         <h1>Bienvenido al buscador de vídeos</h1><br><br>
-        <form method=GET action="http://www.google.es/search">
+        <!-- RECORDAR CAMBIAR METODO GET POR -->
+        <?= form_open("GET","action=http://www.google.es/search", array("ie"=>"UTF-8", "oe"=>"UTF-8",))?>
         	<fieldset>
-        		<input type=hidden name=ie value=UTF-8 />
-        		<input type=hidden name=oe value=UTF-8 />
+        <?= form_label('Buscador', 'browser');?>
 
-        		<input TYPE=text id="s" name="q" value="" size="30" placeholder = "Buscar video" />
-        		<font size=-1>
-
-        		<input type=submit  id="x" name=btnG VALUE="Buscar" />
+                <?= form_input('search_text','','class="input" placeholder="Buscar video"');?>
+                <?= form_submit('submit_search','Buscar');?><br><br>
         		</font>
         	</fieldset>
         </form>
