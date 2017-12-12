@@ -23,9 +23,8 @@
             if($this->input->post('submit_reg'))
             //if ​(​$this ->input->post('submit_reg'))
             {
-                $this->form_validation->set_rules('nombre','Nombre','required');
+				$this->form_validation->set_rules('usuario','Usuario','required|trim|callback_verify_user');
                 $this->form_validation->set_rules('correo','Correo','required|valid_email|trim');
-                $this->form_validation->set_rules('usuario','Usuario','required|trim|callback_verify_user');
                 $this->form_validation->set_rules('pass','Contraseña','required|trim');
                 $this->form_validation->set_rules('pass2','Confirmación de contraseña','required|trim|matches[pass]');
                 $this->form_validation->set_message('required','El campo %s es obligatorio.');

@@ -28,12 +28,9 @@ class Usuarios_model extends CI_Model
     public function add_usuario()
     {
         $new_user = array(
-            'nombre' => $this->input->post('nombre', TRUE),
+			'usuario' => $this->input->post('usuario', TRUE),
             'correo' => $this->input->post('correo', TRUE),
-            'usuario' => $this->input->post('usuario', TRUE),
-            'pass' => $this->input->post('pass', TRUE),
-            'codigo' => '123456',
-            'estado' => '0');
+            'password' => $this->input->post('pass', TRUE));
         $this->db->insert('usuarios', $new_user);
     }
 
@@ -41,7 +38,7 @@ class Usuarios_model extends CI_Model
     {
         $datos = array(
             'usuario'=>$this->input->post('user',TRUE),
-            'pass'=>$this->input->post('pass',TRUE)
+            'password'=>$this->input->post('pass',TRUE)
         );
         $consulta = $this->db->get_where('usuarios', $datos);
     }

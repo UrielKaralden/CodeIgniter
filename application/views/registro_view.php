@@ -14,15 +14,12 @@
             ​<!--formulario--> ​<!--@set_value en los inputs para que recuerde los datos introducidos--> ​
             <?= form_open(base_url().'index.php/usuarios/verify_registro',
                 array('name'=>'form_reg'));?>
-
-            <?= form_label('Nombre','Nombre');?>
-            <?= form_input('nombre', @set_value('nombre'))?> <br><br>
+				
+			<?= form_label('Usuario','Usuario');?>
+            <?= form_input('usuario', @set_value('usuario'))?> <br><br>
 
             <?= form_label('Correo','Correo');?>
             <?= form_input('correo', @set_value('correo'))?> <br><br>
-
-            <?= form_label('Usuario','Usuario');?>
-            <?= form_input('usuario', @set_value('usuario'))?> <br><br>
 
             <?= form_label('Contraseña','Contraseña');?>
             <?= form_password('pass');?> <br><br>
