@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-12-2017 a las 08:58:59
+-- Tiempo de generación: 12-12-2017 a las 09:17:16
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 7.0.10
 
@@ -86,6 +86,7 @@ CREATE TABLE `suscripciones` (
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(25) NOT NULL,
+  `correo` varchar(100) NOT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
