@@ -13,7 +13,7 @@
             array('name'=>'mi_form', 'id'=>'form'));?>
 
         <?= form_label('Título','Título', array('class'=>'label'));?>
-        <?= form_input('titulo','','class="input"');?> <br><br>
+        <?= form_input('titulo','','class="input" placeholder="Buscar"');?> <br><br>
         <!-- La web no detecta la entrada de valores en el campo Título -->
 
         <?= form_label('Descripción','Descripción',
