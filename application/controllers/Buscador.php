@@ -10,7 +10,19 @@
 
         public function index()
         {
-            $this->load->view('buscador_view');
+            $view_data = array();
+            $view_data['content'] = 'busqueda_contenido'
+            $this->load->view('general_view', $view_data);
         }
+
+        /*public function buscar()
+        {
+            if($this->input->post('submit_search'))
+        }*/
     }
+    /*
+        Código para empotrar el buscador en una vista
+
+        <div id="content"><?php $this->load->view($content) ?></div>
+    */
 ?>
