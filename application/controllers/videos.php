@@ -12,19 +12,13 @@
 			$this->load->view('first_view');
 		}
 
-		function vid($url,$user,$title){
-			$url=base_url()."videos/".$url;
+		function video($url,$user,$title){
+			$url=base_url().'videos/'.$url;
 			$data = array('url'=>$url,
 						  'usuario'=>$user,
 						  'titulo'=>$title);
 
 			$this->load->view('videos_view',$data);
-		}
-
-		function vid_array($video_data)
-		{
-			$url=base_url()."videos/".$video_data['url'];
-			$this->load->view('videos_view',$video_data);
 		}
 
 		function search()
