@@ -6,10 +6,25 @@
     <body>
         <h1>Bienvenido a Video Caster.tv</h1><br><br>
         <h2>Soso pero práctico</h2><br><br>
-        <?=form_open('videos/search');?>
-        <?php $search = array('name'=>'search','id'=>'search',"value"=>"");?>
-        <?=form_input($search);?><input type=submit value='Search' /></p>
-        <?=form_close();?>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 well">
+                <?php
+                $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
+                echo form_open("pagination/search", $attr);?>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input class="form-control" id="video_name" name="video_name" placeholder="Busca un vídeo..." type="text" value="<?php echo set_value('video_name'); ?>" />
+                        </div>
+                        <div class="col-md-6">
+                            <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
+                            <a href="<?php echo base_url(). "pagination/index"; ?>" class="btn btn-primary">Show All</a>
+                        </div>
+                    </div>
+                <?php echo form_close(); ?>
+                </div>
+            </div>
+        </div>
         <footer>
         &copy; Web Page developed by: Alejandro Muñoz del Alamo, Santiago Zaldívar Lavalle y Luis Manuel Igartuburu Muñoz
     	</footer>

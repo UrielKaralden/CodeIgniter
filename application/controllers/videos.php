@@ -21,10 +21,23 @@
 			$this->load->view('videos_view',$data);
 		}
 
+		function vid_array($video_data)
+		{
+			$url=base_url()."videos/".$video_data['url'];
+			$this->load->view('videos_view',$video_data);
+		}
+
 		function search()
 		{
+			$config['url'] = base_url()."search/page/";
+			$config['total_rows'] = 50;
+			$config['row_per_page'] = 10;
+
+			$this->pagination->initialize($config);
 			$data['query'] = $this->videos_model->get_search();
 			$this->load->view('search_view', $data);
 		}
+
+
 	}
 ?>
