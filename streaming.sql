@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-01-2018 a las 19:26:25
+-- Tiempo de generación: 08-01-2018 a las 19:56:36
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 7.0.10
 
@@ -43,7 +43,8 @@ INSERT INTO `comentarios` (`id`, `comentario`, `id_videos`, `usuario`) VALUES
 (3, 'TÃ­rate por la ventana', 1, 'hater'),
 (4, 'Desuscribir', 1, 'hater'),
 (16, 'puta vida\r\n', 1, 'pepe'),
-(17, 'hola', 1, 'pepe');
+(17, 'hola', 1, 'pepe'),
+(18, 'que', 1, 'amijo');
 
 -- --------------------------------------------------------
 
@@ -89,8 +90,15 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(25) NOT NULL,
   `correo` varchar(100) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `conectado` binary(2) NOT NULL
+  `conectado` tinyint(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `password`, `conectado`) VALUES
+(1, 'amijo', 'amijo@amijo.es', 'amijo', 0);
 
 -- --------------------------------------------------------
 
@@ -155,7 +163,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `miniaturas`
 --
@@ -170,7 +178,7 @@ ALTER TABLE `suscripciones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `videos`
 --
