@@ -8,5 +8,13 @@
 			$consulta = $this->db->query('Select * from videos;');
 			return $consulta->result();
 		}
+
+		public function upload_video(){
+			 $new_video = array(
+				'url_video' => $this->input->post('url_video', TRUE),
+	            'usuario'   => $this->comentarios_model->get_usuario();
+	            'titulo'    => $this->input->post('pass', TRUE));
+        	$this->db->insert('videos', $new_video);
+		}
 	}
 ?>
