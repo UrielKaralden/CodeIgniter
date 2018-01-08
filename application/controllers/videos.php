@@ -23,13 +23,17 @@
 
 		function search()
 		{
-			$config['url'] = base_url()."search/page/";
+			echo 'Hola soy Edu feliz navidad';
+			echo $this->input->post('Buscar');
+			/*$config['url'] = base_url()."search/page/";
 			$config['total_rows'] = 50;
 			$config['row_per_page'] = 10;
 
+			$this->videos_model->get_search($this->input->post('Buscar'));
+
 			$this->pagination->initialize($config);
 			$data['query'] = $this->videos_model->get_search();
-			$this->load->view('search_view', $data);
+			$this->load->view('search_view', $data);*/
 		}
 
 

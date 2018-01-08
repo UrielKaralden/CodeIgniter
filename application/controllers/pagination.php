@@ -51,14 +51,13 @@ class pagination extends CI_Controller {
     function search()
     {
         // get search string
-        $search = ($this->input->post("video_name"))? $this->input->post("video_name") : "NIL";
-
+        $search = $this->input->post("info");
         $search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
 
         // pagination settings
         $config = array();
         $config['base_url'] = site_url("pagination/search/$search");
-        $config['total_rows'] = $this->pagination_model->get_videos_count($search);
+        $config['total_rows'] = $this->db->count_all('videos');
         $config['per_page'] = "5";
         $config["uri_segment"] = 4;
         $choice = $config["total_rows"]/$config["per_page"];
@@ -85,6 +84,9 @@ class pagination extends CI_Controller {
         $config['num_tag_close'] = '</li>';
         $this->pagination->initialize($config);
 
+
+        $data['info'] = $this->input->post('info');
+
         $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
         // get books list
         $data['videos_list'] = $this->pagination_model->get_videos($config['per_page'], $data['page'], $search);
@@ -93,6 +95,15 @@ class pagination extends CI_Controller {
 
         //load view
         $this->load->view('pagination_view',$data);
+    }
+
+    function prueba()
+    {
+        $info = $this->input->post('info');
+        $model_info = $this->pagination_model->get_prueba($info);
+        $dato = array('busquedas' => $model_info);
+
+        $this->load->view('search_view',$dato);
     }
 }
 ?>

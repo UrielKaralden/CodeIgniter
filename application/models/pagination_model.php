@@ -7,20 +7,25 @@ class pagination_model extends CI_Model{
     }
 
     //fetch books
-    function get_videos($st = NULL)
+    function get_videos($limit, $start, $st = NULL)
     {
         if ($st == "NIL") $st = "";
-        $sql = "Select * from videos where titulo like '%$st%' or usuario like '%$st%' or Fecha like '%$st%'";
+        $sql = "select * from videos where titulo like '%$st%'";
         $query = $this->db->query($sql);
         return $query->result();
     }
 
-    function get_videos_count($st = NULL)
+    function get_videos_count($limit, $start, $st = NULL)
     {
-        if ($st == "NIL") $sql = "Select * from videos order by Fecha desc'";
-        else $sql = "Select * from videos where titulo like '%$st%' or usuario like '%$st%' or Fecha like '%$st%'";
+        if ($st == "NIL") $st = "";
+        $sql = "select * from videos where titulo like '%$st%'";
         $query = $this->db->query($sql);
         return $query->num_rows();
+    }
+    function get_prueba($busqueda)
+    {
+        echo $busqueda;
+
     }
 }
 ?>

@@ -6,14 +6,17 @@
                 <div class="col-md-8 col-md-offset-2 well">
                 <?php
                 $attr = array("class" => "form-horizontal", "role" => "form", "id" => "form1", "name" => "form1");
-                echo form_open("pagination/search", $attr);?>
+                echo form_open("pagination/search_prueba", $attr);?>
                     <div class="form-group">
                         <div class="col-md-6">
-                            <input class="form-control" id="video_name" name="video_name" placeholder="Busca un vídeo..." type="text" value="<?php echo set_value('video_name'); ?>" />
-                        </div>
+                            <!--<input class="form-control" id="video_name" name="video_name" placeholder="Busca un vídeo..." type="text" value="<?php //echo set_value('video_name'); ?>" />-->
+							<?php echo form_input('...','Buscar');
+								  echo form_submit('','Buscar');
+							?>
+						</div>
                         <div class="col-md-6">
-                            <input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Search" />
-                            <a href="<?php echo base_url(). "pagination/index"; ?>" class="btn btn-primary">Show All</a>
+                            <!--<input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Buscar" />-->
+                            <a href="<?php echo base_url(). "pagination/index"; ?>" class="btn btn-primary">Mostrar todos</a>
                         </div>
                     </div>
                 <?php echo form_close(); ?>
@@ -32,7 +35,7 @@
 			$user=$row['usuario'];
 			echo"<h2>$titulo</h2>";
 			echo"<video width=\"854\" height=\"479\" controls>
-				<source src=\"$video\" type=\"video/mp4\">
+				<source src=\".pruebas video\".$video type=\"video/mp4\">
 			</video>";
 			echo"<br>$user";
 		}
@@ -44,7 +47,7 @@
 			$titulo=$row['titulo_video'];
 			$usersugerido=$row['usuario'];
 			echo"<img class=\"logo\" src=\"$miniatura\" alt=\"miniatura\" width=\"150\" height=\"80\"/>";
-			echo"$titulo <br>";
+			echo" <br>$titulo <br>";
 			echo"$usersugerido";
 		}
 		echo"<br><br>";
