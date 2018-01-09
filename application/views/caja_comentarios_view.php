@@ -3,6 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Añadir Comentario</title>
+		<div align ="center">
+			<h3>Biblioteca Audiovisual Perséfone</h3>
+		</div>
 	</head>
 	<body>
 		<?php foreach($act_user as $fila):?>

@@ -2,16 +2,19 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Subir vídeo</title>
+		<div align ="center">
+			<h3>Biblioteca Audiovisual Perséfone</h3>
+		</div>
 	</head>
 	<body>
-		<h1>Subir video</h1>
-		
-		<form name="form_subir_video"
-		action="<?= base_url().'index.php/videos/upload'?>"  method="POST">
+		<h1>Añadir video a Perséfone</h1>
+		<?php 	echo form_open('videos/upload');
+				echo form_label('Nombre del archivo'); echo '&emsp;';
+				echo form_input(array('id'=>'url_video', 'name'=>'url_video')); echo '<br><br>';
+				echo form_label('Título del archivo'); echo '&emsp;';
+				echo form_input(array('id'=>'titulo', 'name'=>'titulo')); echo '<br><br>';
+				echo form_submit(array('id'=>'submit_video','value'=>'Subir video'));
+				echo form_close();?>
 
-			Nombre del archivo: <input type="text" name="url_video" ><br>
-			Título del vídeo: <input type="text" name="titulo" ><br>
-			<input type="submit" value="Subir video">
-		</form>
 	</body>
 </html>

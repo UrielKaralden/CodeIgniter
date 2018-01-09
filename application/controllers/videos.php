@@ -22,5 +22,10 @@
 
 			$this->load->view('videos_view',$data);
 		}
+
+		function go_higher()
+		{
+			$this->load->view('subir_video_view');
+		}
 	}
 ?>

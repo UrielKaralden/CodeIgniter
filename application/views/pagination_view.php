@@ -26,7 +26,10 @@
                     <!--<input class="form-control" id="video_name" name="video_name" placeholder="Busca un vídeo..." type="text" value="<?php //echo set_value('video_name'); ?>" />-->
                     <?php   echo form_label('Buscador');?><br>
                     <?php   echo form_input(array('id'=>'info', 'name'=>'info'));
-                            echo form_submit(array('id'=>'Buscar','value'=>'Buscar'));?>
+                            echo form_submit(array('id'=>'Buscar','value'=>'Buscar'));
+                            echo form_close(); ?>
+                    <?php   echo form_open('videos/go_higher');
+                            echo form_submit(array('id'=>'go_higher','value'=>'Subir vídeo'));?>
                 </div>
                 <div class="col-md-6">
                     <!--<input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Buscar" />-->
