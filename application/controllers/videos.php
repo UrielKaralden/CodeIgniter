@@ -12,13 +12,13 @@
 		}
 
 		function vid($id,$url,$user,$title){
-			$url_base=$url;
-			$url=base_url()."videos/".$url;
+			$url_base=urlencode($url);
+			$url=base_url()."videos/".urlencode($url);
 			$data = array('id'=>$id,
 						  'url'=>$url,
 						  'url_base'=>$url_base,
 						  'usuario'=>$user,
-						  'titulo'=>$title);
+						  'titulo'=>urlencode($title));
 
 			$this->load->view('videos_view',$data);
 		}
@@ -30,8 +30,7 @@
 
 		function upload()
 		{
-			$modelo = $this->load->model('Videos_model');
-			$modelo->upload_video();
+			$modelo = $this->videos_model->upload_video();
 			$this->load->view('videos_view');
 		}
 	}

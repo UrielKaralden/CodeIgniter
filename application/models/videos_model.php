@@ -13,9 +13,11 @@
 			 $new_video = array(
 				'url_video' => $this->input->post('url_video', TRUE),
 	            'usuario'   => $this->comentarios_model->get_usuario(),
-				'desc'		=> $this->input->post('desc', TRUE),
-	            'titulo'    => $this->input->post('pass', TRUE));
+				'descripcion'		=> $this->input->post('desc', TRUE),
+	            'titulo'    => $this->input->post('titulo', TRUE));
         	$this->db->insert('videos', $new_video);
+			$this->db->query('Insert into videos values("","'.$this->input->post('url_video').'","
+			'.$this->comentarios_model->get_usuario().'","'.$this->input->post('desc').'","'.$this->input->post('titulo').'")');
 		}
 	}
 ?>

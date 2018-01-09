@@ -8,9 +8,7 @@
 		</div>
 	</head>
 	<body>
-		<?php foreach($act_user as $fila):?>
-		<h2><?=$actus=$fila->usuario?></h2>
-		<?php endforeach; ?>
+		<h2><?=$actus?></h2>
 		<?= form_open(base_url().'index.php/caja_comentarios/add/'.$url.'/'.$usuario.'/'.$titulo,
 		array('name'=>'mi_form','id'=>'form'));?>
 		<?= form_hidden('iden',"$id",'class="hidden"')?> <br />
