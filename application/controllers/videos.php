@@ -27,5 +27,12 @@
 		{
 			$this->load->view('subir_video_view');
 		}
+
+		function upload()
+		{
+			$modelo = $this->load->model('Videos_model');
+			$modelo->upload_video();
+			$this->load->view('videos_view');
+		}
 	}
 ?>
