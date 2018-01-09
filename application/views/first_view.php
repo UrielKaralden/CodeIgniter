@@ -7,8 +7,8 @@
 		</div>
     </head>
     <body>
-        <?php session_start();?>
-        <h1>Sea bienvenido, <?php $_SESSION['user']?></h1><br>
+        <?php ;?>
+        <h1>Sea bienvenido</h1><br>
         <h3>Por favor, realice una búsqueda</h3>
         <div class="container">
             <div class="row">
@@ -35,6 +35,7 @@
                 </div>
             </div>
         </div>
+
         <footer>
         &copy; Web Page developed by: Alejandro Muñoz del Alamo, Santiago Zaldívar Lavalle y Luis Manuel Igartuburu Muñoz
     </footer>

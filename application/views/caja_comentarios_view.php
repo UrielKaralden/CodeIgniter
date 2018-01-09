@@ -3,14 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Añadir Comentario</title>
-		<?php session_start();?>
 		<div align ="center">
 			<h3>Biblioteca Audiovisual Perséfone</h3>
 		</div>
 	</head>
 	<body>
 		<?php foreach($act_user as $fila):?>
-		<h2><?=$actus=$fila->nombre?></h2>
+		<h2><?=$actus=$fila->usuario?></h2>
 		<?php endforeach; ?>
 		<?= form_open(base_url().'index.php/caja_comentarios/add/'.$url.'/'.$usuario.'/'.$titulo,
 		array('name'=>'mi_form','id'=>'form'));?>

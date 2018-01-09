@@ -6,10 +6,11 @@ class Usuarios_model extends CI_Model
         parent::_construct();
     }
 
-    public function verify_user($user)
+    public function verify_user()
     {
+        $user = $this->input->post('user');
         $ssql = "Select * from usuarios where usuario ='".$user."'";
-        
+
         /*Cambio para el manual de CodeIgniter
             - Sustituir mysql_query por $this->db->query()
             - Sustituir mysql_num_rows por $consulta->num_rows()
