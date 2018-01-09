@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<header>
-		<title><?php $titulo?></title>
+		<title><?php urlencode($titulo)?></title>
 		<div align ="center">
 			<h3>Biblioteca Audiovisual Perséfone</h3>
 		</div>

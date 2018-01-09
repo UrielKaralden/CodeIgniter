@@ -17,7 +17,7 @@
 	            'titulo'    => $this->input->post('titulo', TRUE));
         	$this->db->insert('videos', $new_video);
 			$this->db->query('Insert into videos values("","'.$this->input->post('url_video').'","
-			'.$this->comentarios_model->get_usuario().'","'.$this->input->post('desc').'","'.$this->input->post('titulo').'")');
+			'.$this->comentarios_model->get_usuario().'","'.$this->input->post('desc').'","CURRENT_TIMESTAMP","'.$this->input->post('titulo').'")');
 		}
 	}
 ?>

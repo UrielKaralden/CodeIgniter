@@ -31,7 +31,7 @@
 		function upload()
 		{
 			$modelo = $this->videos_model->upload_video();
-			$this->load->view('videos_view');
+			$this->load->view('first_view');
 		}
 	}
 ?>
