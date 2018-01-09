@@ -46,12 +46,14 @@
             }
         }
 
-        function verify_user($usuario)
+        function verify_user()
         {
+            $usuario = $this->input->post('user');
             $usuario_existe = $this->usuarios_model->verify_user($usuario);
             if($usuario_existe == true)
             {
-                return false;
+                $this->load->view('first_view');
+
             }
             else
             {

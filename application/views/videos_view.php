@@ -1,6 +1,5 @@
 <!DOCTYPE HTML>
 <html>
-<<<<<<< HEAD
 	<header>
 		<title><?php $titulo?></title>
 		<div class="container">
@@ -12,9 +11,9 @@
                     <div class="form-group">
                         <div class="col-md-6">
                             <!--<input class="form-control" id="video_name" name="video_name" placeholder="Busca un vídeo..." type="text" value="<?php //echo set_value('video_name'); ?>" />-->
-							<?php echo form_input('...','Buscar');
-								  echo form_submit('','Buscar');
-							?>
+							<?php   echo form_label('Buscador');?><br>
+		                    <?php   echo form_input(array('id'=>'info', 'name'=>'info'));
+		                            echo form_submit(array('id'=>'Buscar','value'=>'Buscar'));?>
 						</div>
                         <div class="col-md-6">
                             <!--<input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Buscar" />-->
@@ -37,7 +36,7 @@
 			$user=$row['usuario'];
 			echo"<h2>$titulo</h2>";
 			echo"<video width=\"854\" height=\"479\" controls>
-				<source src=\".pruebas video\".$video type=\"video/mp4\">
+				<source src=\".videos\".$video type=\"video/mp4\">
 			</video>";
 			echo"<br>$user";
 		}

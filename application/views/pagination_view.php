@@ -53,7 +53,7 @@
                 <?php for ($i = 0; $i < count($videos_list); ++$i) { ?>
                 <tr>
                     <td><?php echo ($num = $page+$i+1); ?></td>
-                    <td><a href= "<?= base_url().'index.php/videos/video/'.$videos_list[$i]->url_video.'/'.$videos_list[$i]->usuario.'/'.$videos_list[$i]->titulo?>"
+                    <td><a href= "<?= base_url().'index.php/videos/vid/'.$videos_list[$i]->id.'/'.$videos_list[$i]->url_video.'/'.$videos_list[$i]->usuario.'/'.$videos_list[$i]->titulo?>"
                         title =><?php echo $videos_list[$i]->titulo;?> </a></td>
                     <td><?php echo $videos_list[$i]->descripcion; ?></td>
                     <td><?php echo $videos_list[$i]->usuario; ?></td>
