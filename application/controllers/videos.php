@@ -33,5 +33,12 @@
 			$modelo = $this->videos_model->upload_video();
 			$this->load->view('first_view');
 		}
+
+		function logout()
+		{
+			$user = $this->input->post('user');
+			$this->videos_model->logout($user);
+			$this->load->view('usuarios_view');
+		}
 	}
 ?>

@@ -20,7 +20,11 @@
                                     echo form_submit(array('id'=>'Buscar','value'=>'Buscar'));
                                     echo form_close(); ?>
                             <?php   echo form_open('videos/go_higher');
-                                    echo form_submit(array('id'=>'go_higher','value'=>'Subir vídeo'));?>
+                                    echo form_submit(array('id'=>'go_higher','value'=>'Subir vídeo'));
+									echo form_close(); ?>
+                            <?php   $hidden = array('user' => $usuario);
+									echo form_open('videos/logout','', $hidden);
+                                    echo form_submit(array('id'=>'salir','value'=>'salir'));?>
 						</div>
                         <div class="col-md-6">
                             <!--<input id="btn_search" name="btn_search" type="submit" class="btn btn-danger" value="Buscar" />-->

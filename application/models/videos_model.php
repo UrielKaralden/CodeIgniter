@@ -19,5 +19,14 @@
 			$this->db->query('Insert into videos values("","'.$this->input->post('url_video').'","
 			'.$this->comentarios_model->get_usuario().'","'.$this->input->post('desc').'","CURRENT_TIMESTAMP","'.$this->input->post('titulo').'")');
 		}
+
+		public function login($user)
+		{
+			$this->db->query('Update usuarios set conectado = 0 where usuario = ?;',$user);
+		}
+		public function logout($user)
+		{
+			$this->db->query('Update usuarios set conectado = 1 where usuario = ?;',$user);
+		}
 	}
 ?>
