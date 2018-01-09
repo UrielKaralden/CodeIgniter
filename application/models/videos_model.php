@@ -13,6 +13,7 @@
 			 $new_video = array(
 				'url_video' => $this->input->post('url_video', TRUE),
 	            'usuario'   => $this->comentarios_model->get_usuario(),
+				'desc'		=> $this->input->post('desc', TRUE),
 	            'titulo'    => $this->input->post('pass', TRUE));
         	$this->db->insert('videos', $new_video);
 		}

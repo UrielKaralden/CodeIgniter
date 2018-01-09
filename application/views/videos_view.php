@@ -42,9 +42,14 @@
 			$user=$row['usuario'];
 			echo"<h2>$titulo</h2>";
 			echo"<video width=\"854\" height=\"479\" controls>
-				<source src=\"localhost\CodeIgniter\videos\".$video type=\"video/mp4\">
+			<source src=\"/videos/\".$video type=\"video/mp4\">
 			</video>";
-			echo"<br>$user";
+
+			/*echo "<iframe width =\"420\" height=\"315\"
+			src=\"https://www.youtube.com/embed/NlQVSHhU1p0\">
+			</iframe>";
+			echo"<br>$user";*/
+			//<source src=\"/videos/".$video type=\"video/mp4\">
 		}
 		echo"<br><br>";
 		$miniaturas_query="SELECT * from miniaturas where id=1";

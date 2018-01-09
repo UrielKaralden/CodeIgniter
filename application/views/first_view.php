@@ -7,7 +7,8 @@
 		</div>
     </head>
     <body>
-        <h1>Sea bienvenido</h1><br>
+        <?php session_start();?>
+        <h1>Sea bienvenido, <?php $_SESSION['user']?></h1><br>
         <h3>Por favor, realice una búsqueda</h3>
         <div class="container">
             <div class="row">

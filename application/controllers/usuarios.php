@@ -52,6 +52,8 @@
             $usuario_existe = $this->usuarios_model->verify_user($usuario);
             if($usuario_existe == true)
             {
+                session_start();
+                $_SESSION['user'] = $usuario;
                 $this->load->view('first_view');
 
             }

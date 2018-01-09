@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Añadir Comentario</title>
+		<?php session_start();?>
 		<div align ="center">
 			<h3>Biblioteca Audiovisual Perséfone</h3>
 		</div>
